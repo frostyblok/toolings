@@ -1,0 +1,5 @@
+POSTGRES_DB: 'your-development-database-name'
+POSTGRES_TEST_DB: 'your-test-database-name'
+POSTGRES_USER: 'your-postgres-username'
+POSTGRES_PASSWORD: 'your-postgres-password'
+POSTGRES_HOST: 'your-postgres-host'
