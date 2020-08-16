@@ -38,6 +38,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # Use figaro for configuring app using ENV and a single YAML file
 gem 'figaro'
+# Ruby toolkit for Github API
+gem 'octokit', '~> 4.0'
+# Ruby interface for Lokalise API
+gem 'ruby-lokalise-api'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
