@@ -1,0 +1,17 @@
+<div class="container">
+	<h1>List of Tools</h1>
+	<div class="tools">
+		<% if @tools.present? %>
+			<% @tools.each do |tool| %>
+				<p><%= tool.name %></p>
+				<p><%= tool.language %></p>
+
+				<%= link_to 'View tool', tool_path(tool) %>
+			<% end %>
+		<% else %>
+			<p>There are no tools yet, create one from the link below</p>
+		<% end %>
+	</div>
+
+	<%= link_to 'Create New Tool', new_tool_path %>
+</div>
