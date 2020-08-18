@@ -10,7 +10,7 @@ RSpec.describe ToolsController, type: :controller do
       allow_any_instance_of(GithubAPI).to receive(:get_file_content) {json_spec}
       allow_any_instance_of(LokaliseAPI).to receive(:create_translation_keys)
 
-      get :create, params: { name: tool_name, language: tool_language }
+      get :create, params: { tool: { name: tool_name, language: tool_language }}
     end
 
     it "should create a tool" do
