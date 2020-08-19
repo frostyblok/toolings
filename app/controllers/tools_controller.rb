@@ -16,7 +16,7 @@ class ToolsController < ApplicationController
         language: tool_params["language"])
 
     respond_to do |format|
-      format.html { redirect_to tools_path, notice: 'Tool was successfully created.' }
+      format.html { redirect_to root_path, notice: 'Tool was successfully created.' }
       format.json { render :show, status: :created, location: tool }
     end
   end
