@@ -1,13 +1,11 @@
 class LokaliseAPI
-  attr_reader :client, :translations, :language
+  attr_reader :client
 
-  def initialize(translations:, language:)
+  def initialize
     @client = LokaliseClient.instance
-    @translations = translations
-    @language = language
   end
 
-  def create_translation_keys
+  def create_translation_keys(translations:, language:)
     keys = translations.map do |translation_key, translation_value|
       {
         key_name: {
@@ -22,5 +20,13 @@ class LokaliseAPI
     end
 
     client.create_keys(Rails.application.credentials.dig(:lokalise, :project_id), keys)
+  end
+
+  def get_translations
+    client.translations(Rails.application.credentials.dig(:lokalise, :project_id))
+  end
+
+  def get_keys
+    client.keys(Rails.application.credentials.dig(:lokalise, :project_id))
   end
 end
