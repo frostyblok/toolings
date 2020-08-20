@@ -34,6 +34,10 @@ class GithubAPI
     client.create_pull_request(repo, 'master', branch_name, "Update #{language} translation for #{tool_name}")
   end
 
+  def parse_params(params_payload:)
+    JSON.parse(params_payload)
+  end
+
   private
 
   def json_content(file_path:)

@@ -1,5 +1,5 @@
 class LokaliseApisController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token, if: :valid_lokalise_webhook_token?
 
   def webhook
     @all_keys ||= LokaliseAPI.new.get_keys
@@ -46,7 +46,7 @@ class LokaliseApisController < ApplicationController
     master_json_spec
   end
 
-  def valid_webhook_token?
-    params["event"] == Rails.application.credentials.dig(:lokalise, :update_translation_even)
+  def valid_lokalise_webhook_token?
+    params["event"] == Rails.application.credentials.dig(:lokalise, :update_translation_event)
   end
 end
