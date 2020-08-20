@@ -44,7 +44,7 @@ class GithubAPI
     encoded_content = client.contents(repo, path: file_path).content
 
     decoded_content = Base64.decode64(encoded_content)
-    JSON.parse(decoded_content)
+    parse_params(params_payload: decoded_content)
   end
 
   def get_translation_file(tool_name:, language:)
