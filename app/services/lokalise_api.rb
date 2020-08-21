@@ -1,8 +1,9 @@
 class LokaliseAPI
-  attr_reader :client
+  attr_reader :client, :project_id
 
   def initialize
     @client = LokaliseClient.instance
+    @project_id = ENV["LOKALISE_PROJECT_ID"]
   end
 
   def create_translation_keys(translations:, language:)
@@ -19,14 +20,14 @@ class LokaliseAPI
       }
     end
 
-    client.create_keys(Rails.application.credentials.dig(:lokalise, :project_id), keys)
+    client.create_keys(project_id, keys)
   end
 
   def get_translations
-    client.translations(Rails.application.credentials.dig(:lokalise, :project_id))
+    client.translations(project_id)
   end
 
   def get_keys
-    client.keys(Rails.application.credentials.dig(:lokalise, :project_id))
+    client.keys(project_id)
   end
 end
