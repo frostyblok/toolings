@@ -2,6 +2,6 @@ require 'ruby-lokalise-api'
 
 class LokaliseClient
   def self.instance
-    @instance ||= Lokalise.client Rails.application.credentials.dig(:lokalise, :api_key)
+    @instance ||= Lokalise.client ENV["LOKALISE_API_KEY"]
   end
 end

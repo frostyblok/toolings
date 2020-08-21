@@ -40,9 +40,11 @@ You must have the following to run this app:
 
 
 ### Installation
-Follow these instructions to setup your local development environment after cloning the application:
+Follow these instructions to setup your local development environment:
 
 1. Copy the contents of `config/application-example.yml` to a new file in the config folder like so `config/application.yml` and Fill in the relevant details and set appropriate user permissions.
+
+    Note: some of the credentials already have the appropriate values. eg: `GITHUB_WEBHOOK_EVENT` etc.
 2. Run `bundle install && bundle exec rake db:setup`. Then run `rails server` to run your rails server. These chained commands must pass for successful installation.
 
 Note: The app makes use of both Figaro and Rails credentials for storing environment variables. Run `Rails credentials:edit` to set appropriate variables.
@@ -67,11 +69,24 @@ Update your `application.yml` file with your ngrok URLs. For example if your ngr
 BASE_APP_URL="https://5e9a04666d6d.ngrok.io"
 ```
 
-#### 2. Create a Webhook
-Create a Lokalise webhook to listen to translation changes.
+#### 2. Setup webhook
+This webhook allows the app to listen to translation changes on Lokalise
 
-To do this for Lokalise simply go to `your-ngrok-url/create_lokalise_webhook` eg: `https://5e9a04666d6d.ngrok.io/create_lokalise_webhook`
+A webhook has already been initialized but you'd need to update it with your ngrok url -- this allows the application to listen to translation update on Lokalise.
 
+To do this for Lokalise, simple copy the code below
+```
+curl --request PUT   --url https://api.lokalise.com/api2/projects/{project_id}/webhooks/71954d3c6852a6e174291f3f4ee4c0e9f17427aa   --header 'content-type: application/json'   --header 'x-api-token: {api-token}’   --data '{"url”:”{your-ngrok-url}/webhook","events":["project.translation.updated"],"event_lang_map":[{"event":"project.translation.updated","lang_iso_codes":["en"]}]}'
+```
+
+Edit the code above and fill in `project_id`, and the `api-token` with their values.
+
+Note: Please ping me for their respective values.
+
+## Github webhook
+This webhook triggers and event whenever there's a pull request event on Github
+
+To set this up, simply go visit `your-ngrok-url/create_github_webhook`
 
 ----
 

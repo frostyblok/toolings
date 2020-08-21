@@ -16,7 +16,7 @@ class GithubAPI
   end
 
   def create_pull_request(tool_name:, language:, content:)
-    sha = Rails.application.credentials.dig(:github, :master_sha)
+    sha = ENV["MASTER_SHA"]
     branch_name = "update_#{tool_name}_to_#{language}"
 
     # Create a new branch
@@ -36,6 +36,21 @@ class GithubAPI
 
   def parse_params(params_payload:)
     JSON.parse(params_payload)
+  end
+
+  def create_webhook
+    client.create_hook(
+      repo,
+      'web',
+      {
+        :url => "#{ENV["BASE_APP_URL"]}/webhook",
+        :content_type => 'json'
+      },
+      {
+        :events => ['pull_request'],
+        :active => true
+      }
+    )
   end
 
   private

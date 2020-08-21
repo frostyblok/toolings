@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   resources :tools, only: %i[new create index]
 
+  # Webhook routes
   post '/webhook' => 'lokalise_apis#webhook'
+  get '/create_github_webhook' => 'github_api#create_webhook'
+
   post '/github/webhook' => 'github_api#webhook'
 end
