@@ -20,13 +20,17 @@ class GithubApiController < ApplicationController
     tool.update( json_spec: json_spec ) if tool
   end
 
+  def create_webhook
+    GithubAPI.new.create_webhook
+  end
+
   private
 
   def valid_github_webhook_token?
     return true if ENV["RAILS_ENV"] == 'test'
 
-    request.headers["X-GitHub-Event"] == Rails.application.credentials.dig(:github, :github_webhook_event) &&
-      @payload_params_hash["action"] == Rails.application.credentials.dig(:github, :github_webhook_action) &&
+    request.headers["X-GitHub-Event"] == ENV["GITHUB_WEBHOOK_EVENT"] &&
+      @payload_params_hash["action"] == ENV["GITHUB_WEBHOOK_ACTION"] &&
         @payload_params_hash["pull_request"]["merged"]
   end
 end
