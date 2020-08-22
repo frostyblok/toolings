@@ -1,0 +1,329 @@
+{
+  "version": "1.0",
+  "tool_version": "2.1",
+  "id": "BMI",
+  "isMedicalDevice": true,
+  "language": "EN",
+  "result": {
+    "resultRanges": {
+      "bmi": {
+        "title": null,
+        "shouldShowPoints": true,
+        "pointsFrom": -1.0,
+        "activityLevel": null,
+        "displayFormat": "–",
+        "resultHasRichText": true,
+        "titleHasRichText": true,
+        "explanationHasRichText": true
+      },
+      "red1": {
+        "title": "Severely underweight",
+        "shouldShowPoints": true,
+        "pointsFrom": 0.0,
+        "activityLevel": "red",
+        "resultHasRichText": true,
+        "titleHasRichText": true,
+        "explanationHasRichText": true
+      },
+      "orange1": {
+        "title": "Moderately underweight",
+        "shouldShowPoints": true,
+        "pointsFrom": 16.0,
+        "activityLevel": "orange",
+        "resultHasRichText": true,
+        "titleHasRichText": true,
+        "explanationHasRichText": true
+      },
+      "yellow1": {
+        "title": "Mildly underweight",
+        "shouldShowPoints": true,
+        "pointsFrom": 17.0,
+        "activityLevel": "yellow",
+        "resultHasRichText": true,
+        "titleHasRichText": true,
+        "explanationHasRichText": true
+      },
+      "green1": {
+        "title": "Normal weight",
+        "shouldShowPoints": true,
+        "pointsFrom": 18.5,
+        "activityLevel": "green",
+        "resultHasRichText": true,
+        "titleHasRichText": true,
+        "explanationHasRichText": true
+      },
+      "yellow2": {
+        "title": "Overweight",
+        "shouldShowPoints": true,
+        "pointsFrom": 25.0,
+        "activityLevel": "yellow",
+        "resultHasRichText": true,
+        "titleHasRichText": true,
+        "explanationHasRichText": true
+      },
+      "orange2": {
+        "title": "Obese class I",
+        "shouldShowPoints": true,
+        "pointsFrom": 30.0,
+        "activityLevel": "orange",
+        "resultHasRichText": true,
+        "titleHasRichText": true,
+        "explanationHasRichText": true
+      },
+      "red2": {
+        "title": "Obese class II",
+        "shouldShowPoints": true,
+        "pointsFrom": 35.0,
+        "activityLevel": "red",
+        "resultHasRichText": true,
+        "titleHasRichText": true,
+        "explanationHasRichText": true
+      },
+      "deepRed2": {
+        "title": "Obese class III",
+        "shouldShowPoints": true,
+        "pointsFrom": 40.0,
+        "activityLevel": "deepRed",
+        "resultHasRichText": true,
+        "titleHasRichText": true,
+        "explanationHasRichText": true
+      }
+    }
+  },
+  "sections": {
+    "questions": {
+      "weight": {
+        "type": "number",
+        "title": "Weight",
+        "minValue": 1,
+        "maxValue": 300,
+        "isDecimal": true,
+        "unitID": "weightKg",
+        "units": {
+          "kg": {
+            "title": "kg"
+          }
+        },
+        "resultHasRichText": true,
+        "titleHasRichText": true,
+        "explanationHasRichText": true
+      },
+      "height": {
+        "type": "number",
+        "title": "Height",
+        "minValue": 1,
+        "maxValue": 250,
+        "isDecimal": true,
+        "unitID": "heightCM",
+        "units": {
+          "cm": {
+            "title": "cm"
+          }
+        },
+        "resultHasRichText": true,
+        "titleHasRichText": true,
+        "explanationHasRichText": true
+      }
+    }
+  },
+  "infoSections": {
+    "instructionsForUse": {
+      "headerTitle": "Instructions for use",
+      "footerTitle": "Version: 8. 1. 2020",
+      "infoItems": {
+        "instructionsForUse1": {
+          "type": "text",
+          "title": "<b>General description</b><br>Body mass index (BMI) is the most commonly used anthropometric method to measure obesity, which is calculated as an individual’s weight in kilograms divided by height in meters squared.",
+          "titleHasRichText": true
+        },
+        "instructionsForUse2": {
+          "type": "text",
+          "title": "<b>Intended users</b><br>Healthcare professionals",
+          "titleHasRichText": true
+        },
+        "instructionsForUse3": {
+          "type": "text",
+          "title": "<b>Intended use</b><br>Calculate body mass index (BMI)",
+          "titleHasRichText": true
+        },
+        "instructionsForUse4": {
+          "type": "text",
+          "title": "<b>Intended patient population</b><br>Adults",
+          "titleHasRichText": true
+        },
+        "instructionsForUse5": {
+          "type": "text",
+          "title": "<b>Medical conditions to be diagnosed/treated/monitored</b><br>Obesity",
+          "titleHasRichText": true
+        },
+        "instructionsForUse6": {
+          "type": "text",
+          "title": "<b>Patient selection criteria</b><br>None",
+          "titleHasRichText": true
+        },
+        "instructionsForUse7": {
+          "type": "text",
+          "title": "<b>Indications</b><br>None",
+          "titleHasRichText": true
+        },
+        "instructionsForUse8": {
+          "type": "text",
+          "title": "<b>Contraindications</b><br>None",
+          "titleHasRichText": true
+        }
+      }
+    },
+    "warnings": {
+      "headerTitle": "Warnings",
+      "infoItems": {
+        "clinicalJudgement": {
+          "type": "text",
+          "title": "<b>Tools do not replace clinical judgement</b><br>Tools cannot replace clinical judgement and must not be the sole factor for making decisions. Only healthcare professionals considering features of an individual patient, beyond those represented in the tools, in addition to extraneous factors (such as local prevalence of conditions that are on the differential diagnosis) can make decisions for the management of an individual patient.",
+          "titleHasRichText": true
+        },
+        "correctInput": {
+          "type": "text",
+          "title": "<b>Tools depend on you inputting the correct data</b><br>Tools depends on the accuracy of the information entered. You are always responsible for verifying the result and using your best judgement.",
+          "titleHasRichText": true
+        },
+        "recommendedUpdates": {
+          "type": "text",
+          "title": "<b>Recommended updates</b><br>To ensure safe and optimized running of the application, it is recommended that you install software updates as soon as they are available. If you have not enabled automatic updates for this application, then please update the application from the alert in the news feed or an alert dialog inside the application.",
+          "titleHasRichText": true
+        }
+      }
+    },
+    "referenceValues": {
+      "headerTitle": "Reference values",
+      "infoItems": {
+        "referenceValues1": {
+          "type": "score",
+          "title": "Severely underweight",
+          "pointRange": "&lt; 16",
+          "activityLevel": "red",
+          "resultHasRichText": true,
+          "titleHasRichText": true,
+          "explanationHasRichText": true
+        },
+        "referenceValues2": {
+          "type": "score",
+          "title": "Moderately underweight",
+          "pointRange": "16-16,99",
+          "activityLevel": "orange",
+          "resultHasRichText": true,
+          "titleHasRichText": true,
+          "explanationHasRichText": true
+        },
+        "referenceValues3": {
+          "type": "score",
+          "title": "Mildly underweight",
+          "pointRange": "17-18,49",
+          "activityLevel": "yellow",
+          "resultHasRichText": true,
+          "titleHasRichText": true,
+          "explanationHasRichText": true
+        },
+        "referenceValues4": {
+          "type": "score",
+          "title": "Normal weight",
+          "pointRange": "18,5-24,99",
+          "activityLevel": "green",
+          "resultHasRichText": true,
+          "titleHasRichText": true,
+          "explanationHasRichText": true
+        },
+        "referenceValues5": {
+          "type": "score",
+          "title": "Overweight",
+          "pointRange": "25-29,99",
+          "activityLevel": "yellow",
+          "resultHasRichText": true,
+          "titleHasRichText": true,
+          "explanationHasRichText": true
+        },
+        "referenceValues6": {
+          "type": "score",
+          "title": "Obese class I",
+          "pointRange": "30-34,99",
+          "activityLevel": "orange",
+          "resultHasRichText": true,
+          "titleHasRichText": true,
+          "explanationHasRichText": true
+        },
+        "referenceValues7": {
+          "type": "score",
+          "title": "Obese class II",
+          "pointRange": "35-39,99",
+          "activityLevel": "red",
+          "resultHasRichText": true,
+          "titleHasRichText": true,
+          "explanationHasRichText": true
+        },
+        "referenceValues8": {
+          "type": "score",
+          "title": "Obese class III",
+          "pointRange": "≥ 40",
+          "activityLevel": "deepRed",
+          "resultHasRichText": true,
+          "titleHasRichText": true,
+          "explanationHasRichText": true
+        }
+      },
+      "resultHasRichText": true,
+      "titleHasRichText": true,
+      "explanationHasRichText": true
+    },
+    "intro": {
+      "headerTitle": "Explanation",
+      "infoItems": {
+        "instructions1": {
+          "type": "text",
+          "title": "Body Mass Index (BMI) is a simple index of weight-for-height that is commonly used to classify underweight, overweight and obesity in adults. It is defined as the weight in kilograms divided by the square of the height in metres (kg/m²).",
+          "resultHasRichText": true,
+          "titleHasRichText": true,
+          "explanationHasRichText": true
+        }
+      },
+      "resultHasRichText": true,
+      "titleHasRichText": true,
+      "explanationHasRichText": true
+    },
+    "formula": {
+      "headerTitle": "Formula",
+      "infoItems": {
+        "formula1": {
+          "type": "text",
+          "title": "BMI = weight / height²",
+          "resultHasRichText": true,
+          "titleHasRichText": true,
+          "explanationHasRichText": true
+        }
+      },
+      "resultHasRichText": true,
+      "titleHasRichText": true,
+      "explanationHasRichText": true
+    },
+    "references": {
+      "headerTitle": "References",
+      "infoItems": {
+        "reference1": {
+          "type": "text",
+          "title": "Keys, Ancel; Fidanza, Flaminio; Karvonen, Martti J.; Kimura, Noboru; Taylor, Henry L. (1972). \"Indices of relative weight and obesity\". Journal of Chronic Diseases 25 (6–7): 329–43.",
+          "resultHasRichText": true,
+          "titleHasRichText": true,
+          "explanationHasRichText": true
+        },
+        "reference2": {
+          "type": "text",
+          "title": "\"BMI Classification\". Global Database on Body Mass Index. World Health Organization. 2006. http://apps.who.int/bmi/index.jsp?introPage=intro_3.html Retrieved May 2016.",
+          "resultHasRichText": true,
+          "titleHasRichText": true,
+          "explanationHasRichText": true
+        }
+      },
+      "resultHasRichText": true,
+      "titleHasRichText": true,
+      "explanationHasRichText": true
+    }
+  }
+}
